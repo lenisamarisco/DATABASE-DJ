@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Add a form that when submitted creates a new song!</h1>
+
+<!-- Form for creating a new song -->
+<form method="POST">
+    {{ form.hidden_tag() }}  <!-- CSRF Token -->
+
+    <div>
+        <label for="title">Song Title:</label>
+        {{ form.title() }}  <!-- Render the title field -->
+    </div>
+
+    <div>
+        <label for="artist">Artist:</label>
+        {{ form.artist() }}  <!-- Render the artist field -->
+    </div>
+
+    <div>
+        <button type="submit">Create Song</button>
+    </div>
+</form>
+
+{% endblock %}

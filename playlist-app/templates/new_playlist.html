@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Add a form that when submitted creates a new playlist!</h1>
+
+<!-- Form for creating a new playlist -->
+<form method="POST">
+    {{ form.hidden_tag() }}  <!-- CSRF Token -->
+
+    <div>
+        <label for="name">Playlist Name:</label>
+        {{ form.name() }}  <!-- Render the name field -->
+    </div>
+
+    <div>
+        <label for="description">Playlist Description:</label>
+        {{ form.description() }}  <!-- Render the description field -->
+    </div>
+
+    <div>
+        <button type="submit">Create Playlist</button>
+    </div>
+</form>
+
+{% endblock %}
