@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask import Flask, redirect, render_template, request, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_debugtoolbar import DebugToolbarExtension
@@ -21,10 +22,19 @@ db = SQLAlchemy(app)  # Initialize db after configuring app
 debug = DebugToolbarExtension(app)
 
 # Models for Playlist App
+=======
+"""Models for Playlist app."""
+
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+>>>>>>> fdfed954150e02c990de45cb7f20c98a66cad5cc
 
 class Playlist(db.Model):
     """Playlist."""
 
+<<<<<<< HEAD
     __tablename__ = 'playlists'
     
     id = db.Column(db.Integer, primary_key=True)
@@ -35,11 +45,15 @@ class Playlist(db.Model):
 
     def __repr__(self):
         return f'<Playlist {self.name}>'
+=======
+    # ADD THE NECESSARY CODE HERE
+>>>>>>> fdfed954150e02c990de45cb7f20c98a66cad5cc
 
 
 class Song(db.Model):
     """Song."""
 
+<<<<<<< HEAD
     __tablename__ = 'songs'
     
     id = db.Column(db.Integer, primary_key=True)
@@ -50,11 +64,15 @@ class Song(db.Model):
 
     def __repr__(self):
         return f'<Song {self.title} by {self.artist}>'
+=======
+    # ADD THE NECESSARY CODE HERE
+>>>>>>> fdfed954150e02c990de45cb7f20c98a66cad5cc
 
 
 class PlaylistSong(db.Model):
     """Mapping of a playlist to a song."""
 
+<<<<<<< HEAD
     __tablename__ = 'playlist_song'
     
     playlist_id = db.Column(db.Integer, db.ForeignKey('playlists.id'), primary_key=True)
@@ -148,3 +166,14 @@ def add_song_to_playlist(playlist_id):
 
 if __name__ == "__main__":
     app.run(debug=True)
+=======
+    # ADD THE NECESSARY CODE HERE
+
+
+# DO NOT MODIFY THIS FUNCTION
+def connect_db(app):
+    """Connect to database."""
+
+    db.app = app
+    db.init_app(app)
+>>>>>>> fdfed954150e02c990de45cb7f20c98a66cad5cc

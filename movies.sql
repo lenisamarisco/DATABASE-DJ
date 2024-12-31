@@ -9,7 +9,11 @@ CREATE TABLE movies
   title TEXT NOT NULL,
   release_year INTEGER NOT NULL,
   runtime INTEGER NOT NULL,
+<<<<<<< HEAD
   rating VARCHAR(5) NOT NULL
+=======
+  rating TEXT NOT NULL
+>>>>>>> fdfed954150e02c990de45cb7f20c98a66cad5cc
 );
 INSERT INTO movies
   (title, release_year, runtime, rating)
@@ -116,10 +120,16 @@ VALUES
   ('The Incredibles', 2004, 115, 'PG'),
   ('Toy Story 2', 1999, 95, 'G');
 
+<<<<<<< HEAD
 INSERT INTO studios (name, start_date)
 VALUES
   ('Walt Disney Studios Motion Pictures', '1953-06-23'),
   ('20th Century Fox', '1935-05-31'),
+=======
+ALTER TABLE IF EXISTS movies 
+  DROP COLUMN IF EXISTS studio_id;
+
+>>>>>>> fdfed954150e02c990de45cb7f20c98a66cad5cc
 DROP TABLE IF EXISTS studios;
 
 CREATE TABLE studios
@@ -147,8 +157,12 @@ VALUES
   ('Sony Pictures Classics', '1992-01-01');
 
 ALTER TABLE movies
+<<<<<<< HEAD
   ADD COLUMN studio_id INTEGER REFERENCES studios ON DELETE 
   SET NULL;
+=======
+  ADD COLUMN studio_id INTEGER REFERENCES studios;
+>>>>>>> fdfed954150e02c990de45cb7f20c98a66cad5cc
 
 UPDATE movies 
   SET studio_id=1
@@ -397,4 +411,8 @@ VALUES
   (51, 50),
   (60, 50),
   (65, 50);
+<<<<<<< HEAD
   ALTER TABLE movies ADD CONSTRAINT fk_studio FOREIGN KEY (studio_id) REFERENCES studios (id) ON DELETE SET NULL;
+=======
+
+>>>>>>> fdfed954150e02c990de45cb7f20c98a66cad5cc

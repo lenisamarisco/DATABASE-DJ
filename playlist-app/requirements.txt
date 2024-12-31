@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 flask
 psycopg2
+=======
+>>>>>>> fdfed954150e02c990de45cb7f20c98a66cad5cc
 appnope==0.1.0
 backcall==0.1.0
 blinker==1.4
