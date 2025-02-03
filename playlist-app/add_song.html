@@ -7,11 +7,14 @@
 </head>
 <body>
     <h1>Add Song</h1>
-    <form method="POST" action="">
+    <form method="POST" action="{{ url_for('add_song') }}">
         {{ form.hidden_tag() }}
+
         <div>
-            {{ form.song.label }}: {{ form.song() }}
+            <label for="{{ form.song.id }}">{{ form.song.label }}</label>
+            {{ form.song(id=form.song.id) }}
         </div>
+
         <div>
             <button type="submit">Add Song</button>
         </div>
