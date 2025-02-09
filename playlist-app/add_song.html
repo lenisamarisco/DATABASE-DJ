@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Song</title>
+</head>
+<body>
+    <h1>Add Song</h1>
+    <form method="POST" action="{{ url_for('add_song') }}">
+        {{ form.hidden_tag() }}
+
+        <div>
+            <label for="{{ form.song.id }}">{{ form.song.label }}</label>
+            {{ form.song(id=form.song.id) }}
+        </div>
+
+        <div>
+            <button type="submit">Add Song</button>
+        </div>
+    </form>
+</body>
+</html>
